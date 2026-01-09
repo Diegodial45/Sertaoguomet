@@ -1,0 +1,7 @@
+{
+  "name": "Sertão Gourmet System",
+  "description": "A complete restaurant management and customer ordering system with a vibrant orange theme, inspired by Brazilian Northeastern culture.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
