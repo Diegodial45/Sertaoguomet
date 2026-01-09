@@ -250,36 +250,80 @@ const App: React.FC = () => {
         )}
       </main>
 
-      <footer className="bg-orange-900 text-orange-200 py-12">
+      <footer className="bg-orange-900 text-orange-200 py-12 relative group">
         <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div>
-            <h3 className="text-white text-xl font-bold mb-4 flex items-center">
-              <span className="mr-2">🌵</span> {footerConfig.brandName}
-            </h3>
+          <div className="relative">
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="text-white text-xl font-bold flex items-center">
+                <span className="mr-2">🌵</span> {footerConfig.brandName}
+              </h3>
+              <button 
+                onClick={() => setView('admin')}
+                className="opacity-0 group-hover:opacity-100 p-1 text-xs bg-orange-800 rounded hover:bg-orange-700 transition-opacity"
+                title="Editar Nome/Slogan"
+              >
+                ✏️
+              </button>
+            </div>
             <p className="text-sm">{footerConfig.description}</p>
           </div>
           <div>
-            <h4 className="text-white font-semibold mb-4 text-orange-500 uppercase tracking-wider text-sm">Horário</h4>
+            <div className="flex justify-between items-center mb-4">
+              <h4 className="text-white font-semibold text-orange-500 uppercase tracking-wider text-sm">Horário</h4>
+              <button 
+                onClick={() => setView('admin')}
+                className="opacity-0 group-hover:opacity-100 p-1 text-xs bg-orange-800 rounded hover:bg-orange-700 transition-opacity"
+                title="Alterar Data e Hora"
+              >
+                ✏️
+              </button>
+            </div>
             <ul className="text-sm space-y-2">
               <li>{footerConfig.hoursWeek}</li>
               <li>{footerConfig.hoursWeekend}</li>
             </ul>
           </div>
           <div>
-            <h4 className="text-white font-semibold mb-4 text-orange-500 uppercase tracking-wider text-sm">Contatos</h4>
+            <div className="flex justify-between items-center mb-4">
+              <h4 className="text-white font-semibold text-orange-500 uppercase tracking-wider text-sm">Contatos</h4>
+              <button 
+                onClick={() => setView('admin')}
+                className="opacity-0 group-hover:opacity-100 p-1 text-xs bg-orange-800 rounded hover:bg-orange-700 transition-opacity"
+                title="Alterar Contatos"
+              >
+                ✏️
+              </button>
+            </div>
             <ul className="text-sm space-y-2">
               <li>{footerConfig.phone}</li>
               <li>{footerConfig.email}</li>
             </ul>
           </div>
           <div>
-            <h4 className="text-white font-semibold mb-4 text-orange-500 uppercase tracking-wider text-sm">Local</h4>
+            <div className="flex justify-between items-center mb-4">
+              <h4 className="text-white font-semibold text-orange-500 uppercase tracking-wider text-sm">Local</h4>
+              <button 
+                onClick={() => setView('admin')}
+                className="opacity-0 group-hover:opacity-100 p-1 text-xs bg-orange-800 rounded hover:bg-orange-700 transition-opacity"
+                title="Alterar Local"
+              >
+                ✏️
+              </button>
+            </div>
             <p className="text-sm">{footerConfig.address}</p>
           </div>
         </div>
         <div className="container mx-auto px-4 mt-8 pt-8 border-t border-orange-800 text-center text-xs opacity-60">
           {footerConfig.copyright}
         </div>
+        
+        {/* Quick Edit Float Button in Footer */}
+        <button 
+          onClick={() => setView('admin')}
+          className="absolute bottom-4 right-4 bg-orange-600 hover:bg-orange-500 text-white p-3 rounded-full shadow-2xl transition-all transform hover:scale-110 active:scale-90 flex items-center gap-2 font-bold text-sm"
+        >
+          <span>⚙️</span> Alterar Informações do Rodapé
+        </button>
       </footer>
     </div>
   );
