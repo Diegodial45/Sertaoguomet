@@ -59,4 +59,6 @@ export interface FooterConfig {
   copyright: string;
 }
 
-export type ViewState = 'menu' | 'admin' | 'cart' | 'home' | 'quick-sell' | 'stock' | 'caixa';
+export type AdminTab = 'orders' | 'users' | 'settings';
+
+export type ViewState = 'menu' | 'admin' | 'cart' | 'home' | 'quick-sell' | 'stock' | 'caixa' | 'login';
